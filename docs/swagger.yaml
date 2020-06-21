@@ -1,0 +1,76 @@
+basePath: /api/v1
+host: 127.0.0.1:8080
+info:
+  contact:
+    email: me@razeen.me
+    name: Razeen
+    url: https://razeen.me
+  description: This is a sample server celler server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://razeen.me
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /login:
+    post:
+      consumes:
+      - multipart/form-data
+      description: 用户登录
+      parameters:
+      - description: 手机号
+        in: formData
+        name: telephone
+        required: true
+        type: string
+      - description: 密码
+        in: formData
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"msg": "登录成功"}'
+          schema:
+            type: string
+        "400":
+          description: '{"msg": "登录失败"}'
+          schema:
+            type: string
+      summary: 登录
+      tags:
+      - 测试
+  /register:
+    post:
+      consumes:
+      - multipart/form-data
+      description: 用户注册
+      parameters:
+      - description: 手机号
+        in: formData
+        name: telephone
+        required: true
+        type: string
+      - description: 密码
+        in: formData
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"msg": "注册成功"}'
+          schema:
+            type: string
+        "400":
+          description: '{"msg": "注册失败"}'
+          schema:
+            type: string
+      summary: 注册
+      tags:
+      - 测试
+swagger: "2.0"
